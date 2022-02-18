@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    php:
+        build:
+            context: '.'
+            args:
+                PHP_VERSION: '${DEV_PHP_VERSION}'
+        volumes:
+            - '.:/usr/src/app'
+        command: 'tail -f /dev/null'
+        environment:
+            PHP_EXTENSION_PCOV: 1
