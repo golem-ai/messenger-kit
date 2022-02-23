@@ -42,7 +42,7 @@ cs-fix: vendor ## Coding standards fix
 
 .PHONY: phpunit
 phpunit: vendor ## Tests
-	$(EXEC_PHP) vendor/bin/phpunit
+	$(EXEC_PHP) vendor/bin/phpunit --coverage-text
 
 .PHONY: all
 all: phpstan cs phpunit ## Runs all test/lint targets
