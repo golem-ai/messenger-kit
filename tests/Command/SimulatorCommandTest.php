@@ -17,10 +17,6 @@ use Symfony\Component\Messenger\Retry\RetryStrategyInterface;
 use Symfony\Contracts\Service\ServiceProviderInterface;
 
 /**
- * @covers \GolemAi\MessengerKit\Command\SimulatorCommand
- *
- * @uses \GolemAi\MessengerKit\Simulator\Event
- *
  * @internal
  */
 final class SimulatorCommandTest extends TestCase

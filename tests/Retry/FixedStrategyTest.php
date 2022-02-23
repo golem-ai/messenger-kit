@@ -10,8 +10,6 @@ use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Stamp\RedeliveryStamp;
 
 /**
- * @covers \GolemAi\MessengerKit\Retry\FixedStrategy
- *
  * @internal
  */
 final class FixedStrategyTest extends TestCase

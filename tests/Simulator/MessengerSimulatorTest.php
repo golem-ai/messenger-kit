@@ -13,11 +13,6 @@ use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 
 /**
- * @covers \GolemAi\MessengerKit\Simulator\MessengerSimulator
- *
- * @uses \GolemAi\MessengerKit\Simulator\Event
- * @uses \GolemAi\MessengerKit\Retry\FixedStrategy
- *
  * @internal
  */
 final class MessengerSimulatorTest extends TestCase

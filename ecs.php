@@ -36,5 +36,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         GeneralPhpdocAnnotationRemoveFixer::class => [
             __DIR__ . '/tests'
         ],
+        PhpUnitTestClassRequiresCoversFixer::class,
     ]);
 };
