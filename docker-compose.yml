@@ -6,8 +6,9 @@ services:
             context: '.'
             args:
                 PHP_VERSION: '${DEV_PHP_VERSION}'
+        working_dir: /app
         volumes:
-            - '.:/usr/src/app'
+            - '.:/app:cached'
         command: 'tail -f /dev/null'
         environment:
             PHP_EXTENSION_PCOV: 1

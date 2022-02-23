@@ -1,10 +1,20 @@
 ARG PHP_VERSION
 
 # See https://github.com/thecodingmachine/docker-images-php
-FROM thecodingmachine/php:${PHP_VERSION}-v4-cli
+FROM php:${PHP_VERSION}-cli-alpine
 
-RUN sudo apt-get update \
-    && sudo apt-get install -y make \
-    && sudo rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache \
+    make \
+    bash \
+    git
 
-ENV PATH="${PATH}:/usr/src/app/vendor/bin"
+RUN apk add --no-cache --virtual .phpize-deps-configure $PHPIZE_DEPS \
+    && pecl install pcov \
+    && docker-php-ext-enable pcov \
+    && apk del .phpize-deps-configure
+
+RUN echo 'memory_limit=-1' > $PHP_INI_DIR/conf.d/dev.ini
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+ENV PATH="${PATH}:./vendor/bin"
