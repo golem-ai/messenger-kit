@@ -37,7 +37,7 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php_version }}
-                    coverage: none
+                    coverage: pcov
 
             # See https://github.com/actions/cache/blob/main/examples.md#php---composer
             -   name: Get Composer Cache Directory
