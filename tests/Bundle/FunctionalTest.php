@@ -79,7 +79,7 @@ CODE_SAMPLE
         $kernel = self::bootKernel();
         $application = new Application($kernel);
 
-        $command = $application->find('golem:messenger-kit:simulator');
+        $command = $application->find('golem-ai:messenger-kit:simulator');
         $commandTester = new CommandTester($command);
         $commandTester->execute([
             'transport' => $transport,

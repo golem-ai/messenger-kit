@@ -21,7 +21,7 @@ use Symfony\Contracts\Service\ServiceProviderInterface;
 
 class SimulatorCommand extends Command
 {
-    protected static $defaultName = 'golem:messenger-kit:simulator';
+    protected static $defaultName = 'golem-ai:messenger-kit:simulator';
 
     private ServiceProviderInterface $retryStrategyLocator;
 
