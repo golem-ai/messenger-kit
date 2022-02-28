@@ -47,7 +47,7 @@ class MessengerSimulator
                 return;
             }
 
-            $waitingTime = CarbonInterval::milliseconds($strategy->getWaitingTime($envelope));
+            $waitingTime = CarbonInterval::milliseconds($strategy->getWaitingTime($envelope))->cascade();
 
             yield new Event($simulatedTime, Event::KIND_RETRYING_IN, $retryCount, $waitingTime);
 
