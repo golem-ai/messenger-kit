@@ -1,6 +1,6 @@
 # golem-ai/messenger-kit
 
-![Simulator Command](https://user-images.githubusercontent.com/611271/155527879-f1d9f803-7d49-4fdd-be8c-8e668e72cd21.png)
+![Simulator Command](https://user-images.githubusercontent.com/611271/155994843-f99dbd7e-d261-4187-bbf8-76f2656da9a8.png)
 
 ## Installation
 
