@@ -24,6 +24,7 @@ jobs:
                     - '5.2'
                     - '5.3'
                     - '5.4'
+                    - '6.0'
 
         name: "PHP ${{ matrix.php_version }} - Symfony ${{ matrix.symfony_version }}"
 
