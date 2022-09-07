@@ -93,7 +93,7 @@ CODE_SAMPLE
         static::assertSame($expectedOutput, $output);
     }
 
-    protected static function getKernelClass()
+    protected static function getKernelClass(): string
     {
         return TestKernel::class;
     }
