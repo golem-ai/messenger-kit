@@ -20,12 +20,12 @@ class FixedStrategy implements RetryStrategyInterface
         $this->waitingTime = $waitingTime;
     }
 
-    public function isRetryable(Envelope $message): bool
+    public function isRetryable(Envelope $message, \Throwable $throwable = null): bool
     {
         return RedeliveryStamp::getRetryCountFromEnvelope($message) < $this->maxRetry;
     }
 
-    public function getWaitingTime(Envelope $message): int
+    public function getWaitingTime(Envelope $message, \Throwable $throwable = null): int
     {
         return $this->waitingTime;
     }
