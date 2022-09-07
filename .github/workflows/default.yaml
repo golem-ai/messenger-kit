@@ -16,13 +16,16 @@ jobs:
                 php_version:
                     - '7.4'
                     - '8.0'
-                    - '8.1'
                 symfony_version:
                     - '5.1'
                     - '5.2'
                     - '5.3'
                     - '5.4'
-                    - '6.0'
+                include:
+                    - php_version: '8.0'
+                      symfony_version: '6.0'
+                    - php_version: '8.1'
+                      symfony_version: '6.0'
 
         name: "PHP ${{ matrix.php_version }} - Symfony ${{ matrix.symfony_version }}"
 
