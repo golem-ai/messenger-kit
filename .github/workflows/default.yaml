@@ -26,6 +26,8 @@ jobs:
                       symfony_version: '6.0'
                     - php_version: '8.1'
                       symfony_version: '6.0'
+                    - php_version: '8.1'
+                      symfony_version: '6.1'
 
         name: "PHP ${{ matrix.php_version }} - Symfony ${{ matrix.symfony_version }}"
 
