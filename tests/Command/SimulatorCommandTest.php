@@ -66,7 +66,7 @@ final class SimulatorCommandTest extends TestCase
             'transport' => $testTransport,
         ]);
 
-        $commandTester->assertCommandIsSuccessful();
+        static::assertSame(0, $commandTester->getStatusCode());
 
         // the output of the command in the console
         $output = $commandTester->getDisplay();

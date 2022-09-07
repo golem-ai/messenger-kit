@@ -85,7 +85,7 @@ CODE_SAMPLE
             'transport' => $transport,
         ]);
 
-        $commandTester->assertCommandIsSuccessful();
+        static::assertSame(0, $commandTester->getStatusCode());
 
         // the output of the command in the console
         $output = $commandTester->getDisplay();
