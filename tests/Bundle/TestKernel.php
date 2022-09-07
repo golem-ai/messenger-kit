@@ -7,6 +7,7 @@ namespace GolemAi\MessengerKit\Tests\Bundle;
 use GolemAi\MessengerKit\Bundle\GolemAiMessengerKitBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Kernel;
 
@@ -24,9 +25,12 @@ class TestKernel extends Kernel
         return sprintf('%s/test-%s', sys_get_temp_dir(), $this->getEnvironment());
     }
 
-    protected function configureContainer(ContainerConfigurator $c): void
+    /**
+     * @phpstan-ignore-next-line
+     */
+    protected function configureContainer($c): void
     {
-        $c->extension('framework', [
+        $frameworkConfig = [
             'messenger' => [
                 'transports' => [
                     'foo' => [
@@ -47,6 +51,20 @@ class TestKernel extends Kernel
                     ],
                 ],
             ],
-        ]);
+        ];
+
+        if ($c instanceof ContainerBuilder) {
+            $c->loadFromExtension('framework', $frameworkConfig);
+
+            return;
+        }
+
+        \assert($c instanceof ContainerConfigurator);
+
+        $c->extension('framework', $frameworkConfig);
+    }
+
+    protected function configureRoutes(): void
+    {
     }
 }

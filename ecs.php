@@ -4,6 +4,7 @@ use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
 use PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer;
 use PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer;
 use PhpCsFixer\Fixer\Phpdoc\GeneralPhpdocAnnotationRemoveFixer;
+use PhpCsFixer\Fixer\Phpdoc\PhpdocAddMissingParamAnnotationFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitInternalClassFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestClassRequiresCoversFixer;
 use PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer;
@@ -37,5 +38,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             __DIR__ . '/tests'
         ],
         PhpUnitTestClassRequiresCoversFixer::class,
+        PhpdocAddMissingParamAnnotationFixer::class,
     ]);
 };
