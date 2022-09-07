@@ -1,6 +1,7 @@
 parameters:
     checkMissingIterableValueType: true
     inferPrivatePropertyTypeFromConstructor: true
+    checkGenericClassInNonGenericObjectType: false
 
     level: max
 
